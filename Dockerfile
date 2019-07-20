@@ -6,4 +6,5 @@ COPY . .
 RUN go get -d -v ./...
 RUN go install -v ./...
 
-CMD ["app"]
+EXPOSE 3000
+ENTRYPOINT ["app"]

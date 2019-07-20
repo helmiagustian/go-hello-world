@@ -3,16 +3,13 @@ package main
 import (
 	"fmt"
 	"net/http"
-
-	"github.com/go-chi/chi"
 )
 
 func main() {
-	fmt.Println("Hello World !")
+	fmt.Println("Hello World 3000 !")
 
-	r := chi.NewRouter()
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello World !"))
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hello World 3000 !"))
 	})
-	http.ListenAndServe(":80", r)
+	http.ListenAndServe(":3000", nil)
 }
