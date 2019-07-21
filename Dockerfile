@@ -1,10 +1,5 @@
-FROM golang:1.8
+FROM alpine:3.6
 
-WORKDIR /go/src/app
-COPY . .
-
-RUN go get -d -v ./...
-RUN go install -v ./...
-
+COPY go-hello-world /usr/local/bin/app
 EXPOSE 3000
 ENTRYPOINT ["app"]
